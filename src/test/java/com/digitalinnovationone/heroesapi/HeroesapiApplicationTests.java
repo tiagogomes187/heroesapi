@@ -46,7 +46,7 @@ public class HeroesapiApplicationTests {
 	@Test
 	public void getOneHeronotFound(){
 
-		webTestClient.get().uri(HEROES_ENDPOINT_LOCAL.concat("/{id}"),"10")
+		webTestClient.get().uri(HEROES_ENDPOINT_LOCAL.concat("/{id}"),"4")
 				.exchange()
 				.expectStatus().isNotFound();
 
@@ -56,7 +56,7 @@ public class HeroesapiApplicationTests {
 	@Test
 	public void deleteHero(){
 
-		webTestClient.delete().uri(HEROES_ENDPOINT_LOCAL.concat("/{id}"),"1")
+		webTestClient.delete().uri(HEROES_ENDPOINT_LOCAL.concat("/{id}"),"6")
 				.accept(MediaType.APPLICATION_JSON)
 				.exchange()
 				.expectStatus().isNotFound()
