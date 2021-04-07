@@ -19,43 +19,43 @@ public class HeroesData {
 
         Table table = dynamoDB.getTable("Heroes_Api_Table");
 
-        Item hero = new Item()
-                .withPrimaryKey("id", "2")
+        Item hero1 = new Item()
+                .withPrimaryKey("id", "1")
                 .withString("name", "Mulher Maravilha")
                 .withString("universe", "dc comics")
                 .withNumber("films", 2);
 
         Item hero2 = new Item()
-                .withPrimaryKey("id", "3")
+                .withPrimaryKey("id", "2")
                 .withString("name", "Viuva negra")
                 .withString("universe", "marvel")
                 .withNumber("films", 2);
 
         Item hero3 = new Item()
-                .withPrimaryKey("id", "4")
+                .withPrimaryKey("id", "3")
                 .withString("name", "Capita marvel")
                 .withString("universe", "marvel")
                 .withNumber("films", 2);
 
         Item hero4 = new Item()
-                .withPrimaryKey("id", "5")
+                .withPrimaryKey("id", "4")
                 .withString("name", "Homem de Ferro")
                 .withString("universe", "marvel")
                 .withNumber("films", 7);
         Item hero5 = new Item()
 
-                .withPrimaryKey("id", "6")
+                .withPrimaryKey("id", "5")
                 .withString("name", "Homem Aranha")
                 .withString("universe", "marvel")
                 .withNumber("films", 14);
         Item hero6 = new Item()
 
-                .withPrimaryKey("id", "7")
+                .withPrimaryKey("id", "6")
                 .withString("name", "Pantera Negra")
                 .withString("universe", "marvel")
                 .withNumber("films", 3);
 
-        PutItemOutcome outcome1 = table.putItem(hero);
+        PutItemOutcome outcome1 = table.putItem(hero1);
         PutItemOutcome outcome2 = table.putItem(hero2);
         PutItemOutcome outcome3 = table.putItem(hero3);
         PutItemOutcome outcome4 = table.putItem(hero4);
