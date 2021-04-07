@@ -1,5 +1,4 @@
 package com.digitalinnovationone.heroesapi.document;
-
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import org.springframework.data.annotation.Id;
@@ -9,19 +8,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
-@DynamoDBTable(tableName = "Heroes_Table")
-public class Heroes {
-    @Id
-    @DynamoDBHashKey(attributeName = "id")
-    private String id;
-    @DynamoDBAttribute(attributeName = "name")
-    private String name;
-    @DynamoDBAttribute(attributeName = "universe")
-    private String universe;
-    @DynamoDBAttribute(attributeName = "films")
-    private int films;
 
+@NoArgsConstructor
+@DynamoDBTable(tableName ="Heroes_Api_Table")
+
+
+public class Heroes {
     public String getId() {
         return id;
     }
@@ -54,11 +46,26 @@ public class Heroes {
         this.films = films;
     }
 
-    public Heroes(String id, String name, String universe, int films){
+    @Id
+    @DynamoDBHashKey (attributeName = "id")
+    private String id;
+
+    @DynamoDBAttribute (attributeName = "name")
+    private String name;
+
+    @DynamoDBAttribute (attributeName = "universe")
+    private String universe;
+
+    @DynamoDBAttribute (attributeName = "films")
+    private int films;
+
+
+    public Heroes(String id, String name, String universe, int films) {
         this.id = id;
         this.name = name;
         this.universe = universe;
         this.films = films;
     }
+
 
 }
